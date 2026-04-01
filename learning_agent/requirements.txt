@@ -1,0 +1,13 @@
+# Multi-Agent Learning Strategist System — Dependencies
+
+# Core AI
+openai>=1.30.0
+
+# Streamlit UI
+streamlit>=1.35.0
+
+# PDF processing
+pypdf>=4.0.0
+
+# Environment variables
+python-dotenv>=1.0.0
