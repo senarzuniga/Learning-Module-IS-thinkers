@@ -1,9 +1,11 @@
+
 """
 Base agent class for all specialized agents in the multi-agent system.
 """
 
 import os
 from openai import OpenAI
+from learning_agent.exceptions import MissingApiKeyError
 
 
 class BaseAgent:
@@ -23,7 +25,7 @@ class BaseAgent:
         if self._client is None:
             api_key = os.getenv("OPENAI_API_KEY")
             if not api_key:
-                raise EnvironmentError(
+                raise MissingApiKeyError(
                     "OPENAI_API_KEY environment variable is not set."
                 )
             self._client = OpenAI(api_key=api_key)
