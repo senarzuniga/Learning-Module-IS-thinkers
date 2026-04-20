@@ -1,9 +1,11 @@
+
 """
 Voice handler — transcribes audio files using OpenAI's transcription model.
 """
 
 import os
 from typing import Optional
+from learning_agent.exceptions import MissingApiKeyError
 
 
 TRANSCRIPTION_MODEL = "gpt-4o-mini-transcribe"
@@ -23,7 +25,7 @@ def transcribe_audio(audio_bytes: bytes, filename: str) -> Optional[str]:
 
     Raises:
         ValueError: If the audio format is not supported.
-        EnvironmentError: If OPENAI_API_KEY is not set.
+        MissingApiKeyError: If OPENAI_API_KEY is not set.
     """
     import io
     from openai import OpenAI
@@ -37,7 +39,7 @@ def transcribe_audio(audio_bytes: bytes, filename: str) -> Optional[str]:
 
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
-        raise EnvironmentError("OPENAI_API_KEY environment variable is not set.")
+        raise MissingApiKeyError("OPENAI_API_KEY environment variable is not set.")
 
     client = OpenAI(api_key=api_key)
 
