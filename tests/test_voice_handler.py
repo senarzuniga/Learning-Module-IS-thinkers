@@ -11,3 +11,9 @@ def test_voice_handler_key_functionality():
     handler = VoiceHandler()
     result = handler.key_functionality()
     assert result is not None
+
+
+def test_voice_handler_additional_functionality():
+    handler = VoiceHandler()
+    result = handler.additional_functionality()
+    assert result == 'expected_value'
