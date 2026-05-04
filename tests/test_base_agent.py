@@ -16,3 +16,9 @@ def test_base_agent_run_method():
     agent = BaseAgent()
     result = agent.run()
     assert result is not None
+
+
+def test_base_agent_additional_method():
+    agent = BaseAgent()
+    result = agent.additional_method()
+    assert result == 'expected_value'
