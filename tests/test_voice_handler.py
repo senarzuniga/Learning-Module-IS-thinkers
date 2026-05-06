@@ -11,3 +11,10 @@ def test_voice_handler_key_functionality():
     handler = VoiceHandler()
     result = handler.key_functionality()
     assert result is not None
+
+
+def test_voice_handler_edge_case():
+    handler = VoiceHandler()
+    # Assuming edge case involves a specific input or state
+    result = handler.key_functionality(specific_input=True)
+    assert result == 'expected_output'

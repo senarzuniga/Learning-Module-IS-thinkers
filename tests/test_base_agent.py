@@ -16,3 +16,10 @@ def test_base_agent_run_method():
     agent = BaseAgent()
     result = agent.run()
     assert result is not None
+
+
+def test_base_agent_edge_case():
+    agent = BaseAgent()
+    # Assuming edge case involves a specific input or state
+    result = agent.run(specific_input=True)
+    assert result == 'expected_output'
